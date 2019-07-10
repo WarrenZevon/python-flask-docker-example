@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 import pickle
 
@@ -29,7 +29,7 @@ plt.show()
 
 classifiers = [
       ('NeuralNetwork', MLPClassifier(alpha=.01, max_iter=500)),
-      ('AdaBoostClassifier', AdaBoostClassifier()),
+      ('KNeighbor',  KNeighborsClassifier(2)),
       ('NaiveGuassian', GaussianNB())]
 
 for name, clf in classifiers:
