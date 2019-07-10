@@ -58,5 +58,4 @@ def get_rate_recommendations(model_name: str):
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0', port=5000)        # Use for production with Docker
-    # app.run(debug=True, port=5000)                       # Use for development / debug
+    app.run(debug=False, host='0.0.0.0', port=5000)        # Use 0.0.0.0 for Docker
