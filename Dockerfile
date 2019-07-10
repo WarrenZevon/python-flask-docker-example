@@ -12,7 +12,12 @@ EXPOSE 5000
 ENTRYPOINT ["python3"]
 CMD ["serve.py"]
 
+# Builds the docker image
 # docker build -t sklearn-serving-image:latest .
+
+# Runs the docker image once built
 # docker run -d -p 5000:5000 --restart always sklearn-serving-image
+
+# How to find the hostname to make api calls once container starts
 # when container is running, use "docker-machine ip" to get the hostname
 #   and http://<hostname>:5000/models/list
