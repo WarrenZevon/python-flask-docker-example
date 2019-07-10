@@ -30,7 +30,7 @@ labels = ['red','blue']
 def get_models_list():
     return jsonify([*models.keys()])
 
-# POST - /predict/<model_name> with post body
+# POST - /predict/<model_name> with post body {"x1":0.8, "x2":0.9}
 @app.route('/predict/<model_name>', methods=['POST'])
 def get_rate_recommendations(model_name: str):
 
