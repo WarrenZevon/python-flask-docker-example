@@ -14,3 +14,5 @@ CMD ["serve.py"]
 
 # docker build -t sklearn-serving-image:latest .
 # docker run -d -p 5000:5000 --restart always sklearn-serving-image
+# when container is running, use "docker-machine ip" to get the hostname
+#   and http://<hostname>:5000/models/list
