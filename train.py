@@ -27,11 +27,13 @@ plt.scatter(X[:,0],X[:,1], c=['red' if x==0 else 'blue' for x in y])
 plt.show()
 
 
+# Define model identifier and type
 classifiers = [
       ('NeuralNetwork', MLPClassifier(alpha=.01, max_iter=500)),
       ('KNeighbor',  KNeighborsClassifier(2)),
       ('NaiveGuassian', GaussianNB())]
 
+# Train and save models
 for name, clf in classifiers:
     clf.fit(X, y)
     pickle.dump(clf, open('./models/'+name+'.pkl', 'wb'))
