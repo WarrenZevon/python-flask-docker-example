@@ -2,7 +2,7 @@ import pickle
 import os
 from os import listdir
 from os.path import isfile, join
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, abort
 import numpy as np
 
 
@@ -39,7 +39,7 @@ def get_rate_recommendations(model_name: str):
     try:
         model = models[model_name]
     except:
-        return jsonify('No model found')
+        return abort(404,'No model found.')
 
     try:
         post_data = request.get_json()
@@ -54,7 +54,7 @@ def get_rate_recommendations(model_name: str):
 
         return jsonify(response)
 
-    except: return jsonify('Something went wrong with the prediction')
+    except: return abort(404,'Something went wrong with the prediction')
 
 
 if __name__ == "__main__":
