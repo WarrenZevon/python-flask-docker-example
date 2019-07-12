@@ -31,7 +31,7 @@ plt.show()
 classifiers = [
       ('NeuralNetwork', MLPClassifier(alpha=.01, max_iter=500)),
       ('KNeighbor',  KNeighborsClassifier(2)),
-      ('NaiveGuassian', GaussianNB())]
+      ('NaiveGaussian', GaussianNB())]
 
 # Train and save models
 for name, clf in classifiers:
